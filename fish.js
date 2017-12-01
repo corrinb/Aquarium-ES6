@@ -13,6 +13,7 @@ class Fish {
     this.speedY = 1;
     this.width = this.element.offsetWidth;
     this.height = this.element.offsetHeight;
+    this.orientation = 1;
   }
 
   update() {
@@ -20,10 +21,12 @@ class Fish {
     const fishBottom = this.y + this.height;
     if (fishRight >= MAX_X || this.x < MIN_X ) {
       this.speedX *= -1;
+      this.orientation *= -1;
     }
     if (fishBottom >= MAX_Y || this.y < MIN_Y) {
       this.speedY *= -1;
     }
+
     this.x += this.speedX;
     this.y += this.speedY;
   }
@@ -31,6 +34,8 @@ class Fish {
   display() {
     this.element.style.left = this.x;
     this.element.style.top = this.y;
+    const scaleString = `scaleX(${this.orientation})`;
+    this.element.style.transform = `scaleX(${this.orientation})`;
   }
 
 }
