@@ -32,7 +32,7 @@ class Fish {
     this.element.alt = this.image;
   }
 
-  //these actions must happen after the element is appended to the DOM
+  //these actions must happen after the element is appended to the DOMi
   afterCreation() {
     this.height = this.element.offsetHeight;
     this.width = this.element.offsetWidth;

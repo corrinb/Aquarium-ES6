@@ -11,8 +11,8 @@ function init() {
 
 const initFish = () => {
   fishes = [];
-  fishes.push(new Fish('yellow-fish', 18, 300));
-  fishes.push(new Fish('yellow-fish', 21, 200));
+  fishes.push(new Fish('yellow-fish', 16, 300, 0.007, 'medium', 2, 0));
+  fishes.push(new Fish('yellow-fish', 24, 200, 0.003));
   fishes.forEach(fish => {
     stage.appendChild(fish.element);
     fish.afterCreation();
