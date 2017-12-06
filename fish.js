@@ -11,16 +11,16 @@ var sineWave = (x, amplitude, frequency, depth) => {
 
 class Fish {
 
-  constructor(image, amplitude=20, depth=384, frequency=0.005,  size='medium', speed=1, x=0) {
-    this.amplitude = amplitude;
-    this.depth = depth;
+  constructor(image) {
+    this.amplitude = this.getRandomNumber(15,25);
+    this.depth = this.getRandomNumber(100,600);
     this.element = null;
-    this.frequency = frequency;
+    this.frequency = this.getRandomNumber(0.003,0.007);
     this.image = image;
     this.orientation = 1;
-    this.size = size;
-    this.speedX = speed;
-    this.x = x;
+    this.size = 'medium';
+    this.speedX = this.getRandomNumber(0.5,2.5);
+    this.x = 0;
     this.y = 0;
     this.createElement();
   }
@@ -59,6 +59,10 @@ class Fish {
     this.element.style.top = this.y;
     const scaleString = `scaleX(${this.orientation})`;
     this.element.style.transform = `scaleX(${this.orientation})`;
+  }
+
+  getRandomNumber(min, max) {
+    return Math.random() * (max - min) + min;
   }
 
 }
