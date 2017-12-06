@@ -1,19 +1,22 @@
 (() => {
 
+let stage;
 let fishes;
 
 function init() {
+  stage = document.querySelector('#stage');
   initFish();
   window.requestAnimationFrame(animationLoop);
 }
 
 const initFish = () => {
-  const fishElements = document.querySelectorAll('.fish');
   fishes = [];
-  for(let i = 0; i < fishElements.length; i++) {
-    const element = fishElements[i];
-    fishes.push(new Fish(element));
-  }
+  fishes.push(new Fish('yellow-fish', 18, 300));
+  fishes.push(new Fish('yellow-fish', 21, 200));
+  fishes.forEach(fish => {
+    stage.appendChild(fish.element);
+    fish.afterCreation();
+  });
 }
 
 const animationLoop = () => {
