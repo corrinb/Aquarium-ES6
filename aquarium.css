@@ -23,9 +23,5 @@ body {
 
 .medium-fish {
   height: 100px;
-  width: 150px;
-}
-
-#yellow-fish {
-
+  width: auto;
 }

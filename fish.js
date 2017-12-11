@@ -11,9 +11,9 @@ var sineWave = (x, amplitude, frequency, depth) => {
 
 class Fish {
 
-  constructor(image) {
+  constructor(image='yellow-fish') {
     this.amplitude = this.getRandomNumber(15,25);
-    this.depth = this.getRandomNumber(100,600);
+    this.depth = this.getRandomNumber(50,600);
     this.element = null;
     this.frequency = this.getRandomNumber(0.003,0.007);
     this.image = image;
@@ -32,7 +32,7 @@ class Fish {
     this.element.alt = this.image;
   }
 
-  //these actions must happen after the element is appended to the DOMi
+  //these actions must happen after the element is appended to the DOM
   afterCreation() {
     this.height = this.element.offsetHeight;
     this.width = this.element.offsetWidth;
@@ -40,7 +40,7 @@ class Fish {
 
   update() {
     const fishRight = this.x + this.width;
-    const fishBottom = this.y + this.height;
+    const fishBottom = this.y + this.height;  // do I need this?
     if (fishRight >= MAX_X || this.x < MIN_X ) {
       this.speedX *= -1;
       this.orientation *= -1;
