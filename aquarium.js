@@ -10,15 +10,12 @@ function init() {
 }
 
 const initFish = () => {
-  fishes = [];
-  fishes.push(new Fish('blue-fish'));
-  fishes.push(new Fish('chaetodon-fish'));
-  fishes.push(new Fish('orange-fish'));
-  fishes.push(new Fish('yellow-fish'));
-  fishes.push(new Fish('yellow-tang-fish'));
-  fishes.forEach(fish => {
-    stage.appendChild(fish.element);
-    fish.afterCreation();
+  let fishImages = ['blue-fish', 'chaetodon-fish', 'orange-fish', 'yellow-fish', 'yellow-tang-fish'];
+  fishes = fishImages.map(fishImage => {
+    let newFish = new Fish(fishImage);
+    stage.appendChild(newFish.element);
+    newFish.afterCreation();
+    return newFish;
   });
 }
 
