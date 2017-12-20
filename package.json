@@ -1,0 +1,32 @@
+{
+  "name": "aquarium-es6",
+  "version": "1.0.0",
+  "description": "fish",
+  "main": "aquarium.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel js -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corrinb/Aquarium-ES6.git"
+  },
+  "keywords": [
+    "fish"
+  ],
+  "author": "corrinbarnes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corrinb/Aquarium-ES6/issues"
+  },
+  "homepage": "https://github.com/corrinb/Aquarium-ES6#readme"
+}
